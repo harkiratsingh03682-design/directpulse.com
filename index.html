@@ -24,8 +24,20 @@
   --green:#4dffb0;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+/* SMOOTH SCROLLING GLOBAL SETUP */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body{
   font-family:Inter,Arial,sans-serif;
   color:var(--text);
@@ -53,6 +65,7 @@ button{cursor:pointer}
 
 .container{width:min(1180px,92%);margin:auto}
 
+/* NAV STYLING WITH SMOOTH TRANSITION */
 .nav{
   position:fixed;
   z-index:100;
@@ -66,8 +79,9 @@ button{cursor:pointer}
   padding:13px 15px 13px 20px;
   border:1px solid var(--line);
   border-radius:20px;
-  background:rgba(5,5,11,.70);
+  background:rgba(5,5,11,.75);
   backdrop-filter:blur(22px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .logo{
   font:700 23px "Space Grotesk",sans-serif;
@@ -89,7 +103,9 @@ button{cursor:pointer}
 }
 .nav-right{display:flex;align-items:center;gap:15px}
 .navlinks{display:flex;gap:28px;color:#b7b8c8;font-size:13px}
+.navlinks a{transition: color 0.3s ease;}
 .navlinks a:hover{color:#fff}
+
 .dashboard-btn-icon{
   background:rgba(139,92,246,.15);
   border:1px solid rgba(181,108,255,.4);
@@ -101,7 +117,7 @@ button{cursor:pointer}
   display:flex;
   align-items:center;
   gap:6px;
-  transition:.25s;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .dashboard-btn-icon:hover{
   background:rgba(139,92,246,.3);
@@ -116,7 +132,7 @@ button{cursor:pointer}
   border-radius:12px;
   padding:12px 17px;
   font-weight:700;
-  transition:.25s;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn:hover{transform:translateY(-2px);border-color:rgba(181,108,255,.55)}
 .btn.primary{
@@ -262,7 +278,7 @@ section{padding:105px 0;position:relative}
   border:1px solid var(--line);
   border-radius:27px;
   background:linear-gradient(155deg,rgba(255,255,255,.06),rgba(255,255,255,.018));
-  transition:.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   animation: floatCard 6s ease-in-out infinite alternate;
 }
 .package:hover{
@@ -369,13 +385,20 @@ section{padding:105px 0;position:relative}
 .footer p{color:#727486;font-size:12px;margin-top:10px}
 .footer-links{display:flex;gap:20px;color:#888b9d;font-size:12px}
 
+/* SMOOTH MODAL TRANSITIONS */
 .modal{
   position:fixed;inset:0;z-index:500;
-  display:none;place-items:center;
+  display:flex;align-items:center;justify-content:center;
   background:rgba(0,0,0,.78);
   backdrop-filter:blur(15px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
-.modal.show{display:grid}
+.modal.show{
+  opacity: 1;
+  pointer-events: auto;
+}
 .modal-box{
   width:min(650px,92%);
   border:1px solid var(--line);
@@ -383,10 +406,17 @@ section{padding:105px 0;position:relative}
   padding:30px;
   background:#0a0a13;
   box-shadow:0 30px 100px rgba(0,0,0,.55);
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.modal.show .modal-box{
+  transform: translateY(0) scale(1);
+}
+
 .modal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .modal h3{font:600 25px "Space Grotesk"}
-.close{font-size:24px;color:#999;cursor:pointer}
+.close{font-size:24px;color:#999;cursor:pointer;transition:color 0.2s}
+.close:hover{color:#fff}
 .modal p{color:var(--muted);font-size:13px;line-height:1.7}
 
 .toast{
@@ -401,12 +431,20 @@ section{padding:105px 0;position:relative}
   border-radius:12px;
   background:#11111b;
   color:#fff;font-size:13px;
-  transition:.3s;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}
-.reveal.visible{opacity:1;transform:none}
+/* SMOOTH REVEAL ANIMATIONS ON SCROLL */
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
 
 @media(max-width:850px){
   .nav{top:8px}
@@ -455,7 +493,7 @@ section{padding:105px 0;position:relative}
         Network.
       </h1>
 
-      <p>
+      <p id="about">
         A futuristic digital ecosystem designed to connect wallets, smart contracts,
         and Web3 high-yield packages seamlessly.
       </p>
@@ -786,9 +824,12 @@ document.querySelectorAll('.modal').forEach(modal=>{
   });
 });
 
+/* INTERSECTION OBSERVER FOR ULTRA-SMOOTH SCROLL REVEAL */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.classList.add('visible');
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
   });
 },{threshold:.12});
 
