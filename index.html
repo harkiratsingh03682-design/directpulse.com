@@ -4,16 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#05050b">
-<title>DirectPulse — Decentralized Smart Contract Protocol</title>
+<title>DirectPulse — Web3 Ecosystem</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root{
-  --bg:#030308;
-  --card-bg: rgba(18, 16, 35, 0.65);
-  --line: rgba(181, 108, 255, 0.22);
-  --line-hover: rgba(66, 232, 255, 0.55);
+  --bg:#05050b;
+  --panel2:#10101c;
+  --line:rgba(255,255,255,.10);
   --text:#f8f8ff;
   --muted:#9698ab;
   --purple:#8b5cf6;
@@ -35,13 +34,9 @@ html {
 }
 
 body{
-  font-family:Inter,sans-serif;
+  font-family:Inter,Arial,sans-serif;
   color:var(--text);
   background:var(--bg);
-  background-image: 
-    radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.14) 0%, transparent 45%),
-    radial-gradient(circle at 85% 65%, rgba(66, 232, 255, 0.12) 0%, transparent 45%);
-  background-attachment: fixed;
   overflow-x:hidden;
 }
 
@@ -51,7 +46,7 @@ button{cursor:pointer}
 
 .container{width:min(1180px,92%);margin:auto}
 
-/* NAVIGATION */
+/* NAV STYLING */
 .nav{
   position:fixed;
   z-index:100;
@@ -62,17 +57,15 @@ button{cursor:pointer}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:13px 20px;
+  padding:13px 15px 13px 20px;
   border:1px solid var(--line);
   border-radius:20px;
-  background:rgba(10, 8, 20, 0.85);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background:rgba(5,5,11,.88);
+  backdrop-filter:blur(15px);
 }
 .logo{
   font:700 23px "Space Grotesk",sans-serif;
-  letter-spacing:-0.5px;
+  letter-spacing:-1px;
 }
 .logo i{
   display:inline-block;
@@ -88,25 +81,20 @@ button{cursor:pointer}
   color:transparent;
 }
 .nav-right{display:flex;align-items:center;gap:15px}
-.navlinks{display:flex;gap:28px;color:#b7b8c8;font-size:14px;font-weight:500}
-.navlinks a:hover{color:#fff; text-shadow: 0 0 8px rgba(255,255,255,0.5);}
+.navlinks{display:flex;gap:28px;color:#b7b8c8;font-size:13px}
+.navlinks a:hover{color:#fff}
 
 .dashboard-btn-icon{
   background:rgba(139,92,246,.15);
   border:1px solid rgba(181,108,255,.4);
   color:var(--cyan);
-  padding:9px 16px;
+  padding:9px 14px;
   border-radius:12px;
   font-weight:600;
   font-size:13px;
   display:flex;
   align-items:center;
   gap:6px;
-  transition: background 0.2s, border-color 0.2s;
-}
-.dashboard-btn-icon:hover{
-  background:rgba(139,92,246,.3);
-  border-color:var(--cyan);
 }
 
 .btn{
@@ -114,244 +102,216 @@ button{cursor:pointer}
   color:#fff;
   background:rgba(255,255,255,.05);
   border-radius:12px;
-  padding:12px 20px;
+  padding:12px 17px;
   font-weight:700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: opacity 0.2s ease;
 }
-.btn:active{transform: scale(0.97);}
+.btn:active{opacity: 0.8;}
 .btn.primary{
   border:0;
   background:linear-gradient(135deg,#7c3aed,#b026ff 55%,#24d9ff);
-  box-shadow:0 4px 20px rgba(139,92,246,.4);
-}
-.btn.primary:hover{
-  box-shadow:0 6px 25px rgba(66,232,255,.5);
+  box-shadow:0 0 20px rgba(139,92,246,.24);
 }
 
 .hero{
-  padding:155px 0 70px;
+  padding:145px 0 60px;
   text-align:center;
 }
 .pill{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:8px 16px;
+  padding:8px 13px;
   border-radius:50px;
-  border:1px solid rgba(181,108,255,.4);
-  background:rgba(139,92,246,.12);
-  color:#e0d0ff;
-  font-size:13px;
-  font-weight:600;
-  margin-bottom:24px;
-  box-shadow: 0 0 15px rgba(139,92,246,0.2);
+  border:1px solid rgba(181,108,255,.28);
+  background:rgba(139,92,246,.08);
+  color:#d8c5ff;
+  font-size:12px;
+  margin-bottom:22px;
 }
 .pill b{
-  width:8px;height:8px;border-radius:50%;
+  width:7px;height:7px;border-radius:50%;
   background:var(--green);
   box-shadow:0 0 10px var(--green);
 }
 h1{
-  font:800 clamp(42px,6vw,76px)/1.05 "Space Grotesk",sans-serif;
-  letter-spacing:-2px;
+  font:700 clamp(40px,6vw,72px)/1 "Space Grotesk",sans-serif;
+  letter-spacing:-3px;
 }
 .gradient{
-  background:linear-gradient(90deg, #ffffff 10%, #c892ff 50%, #42e8ff 90%);
+  background:linear-gradient(90deg,#fff 5%,#bd83ff 43%,#44eaff 90%);
   -webkit-background-clip:text;
   color:transparent;
 }
 .hero p{
   color:var(--muted);
-  max-width:640px;
-  font-size:17px;
+  max-width:610px;
+  font-size:16px;
   line-height:1.7;
-  margin:22px auto 32px;
+  margin:20px auto 28px;
 }
-.actions{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-section{padding:65px 0;position:relative}
-.section-head{text-align:center;max-width:760px;margin:0 auto 50px}
+section{padding:60px 0;position:relative}
+.section-head{text-align:center;max-width:760px;margin:0 auto 45px}
 .section-head h2{
-  font:700 clamp(34px,5vw,54px)/1 "Space Grotesk";
-  letter-spacing:-1.5px;
+  font:700 clamp(32px,5vw,52px)/1 "Space Grotesk";
+  letter-spacing:-2px;
 }
-.section-head p{color:var(--muted);font-size:16px;line-height:1.7;margin-top:14px}
+.section-head p{color:var(--muted);line-height:1.7;margin-top:12px}
 
-/* PACKAGES GRID LAYOUT */
+/* PACKAGES LAYOUT */
 .packages{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-  gap:24px;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:20px;
 }
-
 .package{
   position:relative;
-  padding:30px 24px;
+  padding:28px;
   border:1px solid var(--line);
   border-radius:24px;
-  background: var(--card-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  will-change: transform;
-}
-.package:hover{
-  transform: translateY(-5px);
-  border-color: var(--line-hover);
-  box-shadow: 0 10px 30px rgba(66, 232, 255, 0.15);
+  background:rgba(255,255,255,.02);
+  transform: translateZ(0); /* Fixes lag on mobile */
 }
 .package.featured{
-  border-color:rgba(181,108,255,.7);
-  background: linear-gradient(180deg, rgba(30, 20, 55, 0.75) 0%, rgba(15, 12, 30, 0.75) 100%);
-  box-shadow:0 0 35px rgba(139,92,246,.25);
+  border-color:rgba(181,108,255,.65);
+  box-shadow:0 0 30px rgba(139,92,246,.12);
 }
 
-/* HIGH-LEVEL BADGES TOP RIGHT */
+/* BADGES AT TOP RIGHT */
 .pkg-badges{
   position:absolute;
-  top:20px;
-  right:18px;
+  top:22px;
+  right:20px;
   display:flex;
   flex-direction:column;
   align-items:flex-end;
-  gap:5px;
+  gap:6px;
 }
 .badge-direct{
   padding:4px 9px;
   border-radius:20px;
-  font-size:10.5px;
+  font-size:11px;
   font-weight:700;
   background:rgba(66,232,255,.12);
-  border:1px solid rgba(66,232,255,.4);
+  border:1px solid rgba(66,232,255,.35);
   color:var(--cyan);
-  box-shadow: 0 0 10px rgba(66,232,255,0.15);
 }
 .badge-upgrade{
   padding:4px 9px;
   border-radius:20px;
-  font-size:10.5px;
+  font-size:11px;
   font-weight:700;
   background:rgba(181,108,255,.12);
-  border:1px solid rgba(181,108,255,.4);
+  border:1px solid rgba(181,108,255,.35);
   color:var(--violet);
-  box-shadow: 0 0 10px rgba(181,108,255,0.15);
 }
 .badge-passup{
   padding:4px 9px;
   border-radius:20px;
-  font-size:10.5px;
+  font-size:11px;
   font-weight:700;
   background:rgba(255,184,77,.12);
-  border:1px solid rgba(255,184,77,.4);
+  border:1px solid rgba(255,184,77,.35);
   color:var(--gold);
-  box-shadow: 0 0 10px rgba(255,184,77,0.15);
 }
 
-.package h3{font:700 24px "Space Grotesk"; letter-spacing: -0.5px;}
+.package h3{font:600 22px "Space Grotesk"}
 .package .price{
-  font:800 36px "Space Grotesk";
-  margin:18px 0 4px;
+  font:700 32px "Space Grotesk";
+  margin:16px 0 6px;
   color:var(--cyan);
-  text-shadow: 0 0 15px rgba(66,232,255,0.3);
 }
-.package small{color:var(--muted); font-size:12px; font-weight:500;}
-.package ul{list-style:none;margin:22px 0 26px;color:#c2c4d6}
-.package li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13.5px}
-.package li:before{content:"✓";color:var(--cyan);font-weight:bold;margin-right:10px}
-.package .btn{width:100%; text-align:center;}
+.package small{color:var(--muted); font-size:12px;}
+.package ul{list-style:none;margin:20px 0 22px;color:#b4b5c4}
+.package li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px}
+.package li:before{content:"✓";color:var(--cyan);margin-right:8px}
+.package .btn{width:100%}
 
-/* REFERRAL SECTION */
+/* REFERRAL & FOOTER */
 .referral-box{
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:45px 30px;
-  background: linear-gradient(135deg, rgba(20, 15, 40, 0.7), rgba(8, 6, 18, 0.7));
-  backdrop-filter: blur(12px);
+  border:1px solid rgba(181,108,255,.27);
+  border-radius:24px;
+  padding:35px;
+  background:rgba(255,255,255,.02);
   text-align:center;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
-.referral-box h2{font:700 38px "Space Grotesk";letter-spacing:-1px}
-.referral-box p{color:var(--muted);margin:12px 0 24px; font-size:16px;}
-.ref-row{display:flex;gap:12px;max-width:580px;margin:auto}
+.referral-box h2{font:700 36px "Space Grotesk";letter-spacing:-1px}
+.referral-box p{color:var(--muted);margin:10px 0 20px}
+.ref-row{display:flex;gap:10px;max-width:550px;margin:auto}
 .ref-row input{
   flex:1;
-  color:#e2e3f0;
-  background:rgba(5,5,12,0.8);
+  color:#d8d9e5;
+  background:#06060d;
   border:1px solid var(--line);
   border-radius:12px;
-  padding:14px;
+  padding:12px;
   outline:none;
-  font-size:14px;
 }
-.ref-row input:focus{border-color:var(--cyan);}
 
 .footer{
   border-top:1px solid var(--line);
-  padding:45px 0;
-  margin-top:30px;
+  padding:40px 0;
 }
 .footer-row{display:flex;justify-content:space-between;gap:20px}
-.footer p{color:#727486;font-size:13px;margin-top:10px}
+.footer p{color:#727486;font-size:12px;margin-top:8px}
 
-/* MODALS */
+/* MODAL STYLING */
 .dashboard-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
-  gap:14px;
+  gap:12px;
   margin-bottom:20px;
 }
 .dash-card{
-  background:rgba(18,16,35,0.9);
+  background:var(--panel2);
   border:1px solid var(--line);
-  padding:18px;
-  border-radius:16px;
+  padding:16px;
+  border-radius:14px;
   text-align: center;
 }
-.dash-card h4{font-size:11px;color:var(--muted);margin-bottom:8px; text-transform: uppercase; letter-spacing:0.5px;}
-.dash-card .val{font:700 24px "Space Grotesk";color:#fff}
-.dash-card .val.highlight{color:var(--green); text-shadow:0 0 10px rgba(77,255,176,0.3);}
+.dash-card h4{font-size:11px;color:var(--muted);margin-bottom:6px; text-transform: uppercase;}
+.dash-card .val{font:700 22px "Space Grotesk";color:#fff}
+.dash-card .val.highlight{color:var(--green)}
 
 .modal{
   position:fixed;inset:0;z-index:500;
   display:none;align-items:center;justify-content:center;
-  background:rgba(0,0,0,.82);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
+  background:rgba(0,0,0,.8);
+  backdrop-filter:blur(10px);
 }
 .modal.show{display:flex}
 .modal-box{
   width:min(600px,92%);
   border:1px solid var(--line);
-  border-radius:24px;
-  padding:30px;
-  background:#0b0916;
-  box-shadow: 0 0 40px rgba(139,92,246,0.25);
+  border-radius:20px;
+  padding:25px;
+  background:#0a0a13;
 }
-.modal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.modal h3{font:700 24px "Space Grotesk"}
-.close{font-size:26px;color:#999;cursor:pointer; transition:color 0.2s}
-.close:hover{color:#fff}
+.modal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.modal h3{font:600 22px "Space Grotesk"}
+.close{font-size:24px;color:#999;cursor:pointer}
 
 .toast{
   position:fixed;
-  left:50%;bottom:30px;
+  left:50%;bottom:25px;
   transform:translateX(-50%);
   opacity:0;
   pointer-events:none;
   z-index:700;
-  padding:12px 22px;
-  border:1px solid var(--cyan);
-  border-radius:12px;
-  background:#0c0a1a;
-  color:#fff;font-size:14px; font-weight:600;
-  box-shadow: 0 0 20px rgba(66,232,255,0.3);
-  transition: opacity 0.3s ease;
+  padding:10px 16px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#11111b;
+  color:#fff;font-size:13px;
+  transition: opacity 0.3s;
 }
 .toast.show{opacity:1}
 
 @media(max-width:850px){
   .navlinks{display:none}
-  .hero{padding-top:130px}
+  .hero{padding-top:120px}
   .ref-row{flex-direction:column}
 }
 </style>
@@ -363,9 +323,9 @@ section{padding:65px 0;position:relative}
   <a class="logo" href="#home">direct<i></i><span>Pulse</span></a>
 
   <nav class="navlinks">
-    <a href="#about">About Protocol</a>
-    <a href="#packages">Ecosystem Tiers</a>
-    <a href="#referral">Network Referral</a>
+    <a href="#about">About</a>
+    <a href="#packages">Packages</a>
+    <a href="#referral">Referral</a>
   </nav>
 
   <div class="nav-right">
@@ -380,9 +340,9 @@ section{padding:65px 0;position:relative}
 
 <section class="hero" id="home">
   <div class="container">
-    <div class="pill"><b></b> AUTOMATED SMART CONTRACT PROTOCOL</div>
+    <div class="pill"><b></b> NEXT-GENERATION WEB3 ECOSYSTEM</div>
     <h1>Enter the <span class="gradient">DirectPulse</span> Network.</h1>
-    <p id="about">An immutable decentralized architecture facilitating real-time yield routing, automated pass-up matrices, and instant liquidity distribution.</p>
+    <p id="about">A futuristic digital ecosystem designed to connect wallets, smart contracts, and Web3 high-yield packages seamlessly.</p>
     <div class="actions">
       <button class="btn primary" onclick="openDashboard()">Open Dashboard</button>
       <button class="btn" onclick="connectWallet()">Connect Wallet</button>
@@ -393,212 +353,212 @@ section{padding:65px 0;position:relative}
 <section id="packages">
   <div class="container">
     <div class="section-head">
-      <h2>Ecosystem <span class="gradient">Packages</span></h2>
-      <p>Select your node entry level. Execution is governed <i>de jure</i> by verified Smart Contract parameters.</p>
+      <h2>Explore <span class="gradient">Packages</span></h2>
+      <p>Select your entry tier. Powered directly by Smart Contract logic.</p>
     </div>
 
     <div class="packages">
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Pulse Entry</h3>
         <div class="price">30 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Perpetual Direct Yield Routing</li>
-          <li>Instant On-Chain Settlement</li>
-          <li>Basic Network Node Rights</li>
+          <li>Basic Ecosystem Access</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('30 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Pulse Basic</h3>
         <div class="price">100 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Enhanced Matrix Node Allocation</li>
-          <li>Direct & Pass-Up Commission Stream</li>
-          <li>Autonomous Contract Execution</li>
+          <li>Enhanced Matrix Node</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('100 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Pulse Advance</h3>
         <div class="price">500 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Expanded Yield Acceleration</li>
-          <li>Multi-Tier Level Advancement</li>
-          <li>Real-Time Liquidity Distribution</li>
+          <li>Expanded Network Growth</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('500 USDT')">Activate Package</button>
       </article>
 
       <article class="package featured">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Pulse Pro</h3>
         <div class="price">1,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Priority Consensus & Matrix Priority</li>
-          <li>Optimized Pass-Up Channel Routing</li>
-          <li>Full Protocol Tier Unlocked</li>
+          <li>Full Matrix Access</li>
+          <li>Priority Yield Distribution</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn primary" onclick="selectPackage('1,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Starter Tier</h3>
         <div class="price">5,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Institutional Core Matrix Access</li>
-          <li>Direct Protocol Compensation</li>
-          <li>Immutable Yield Security</li>
+          <li>Full Platform Access</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('5,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Advancer Tier</h3>
         <div class="price">15,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>High-Volume Node Status</li>
-          <li>Automated Level Upgrade Protocol</li>
-          <li>Decentralized Dividend Stream</li>
+          <li>Priority Node Slot</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('15,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Pro Tier</h3>
         <div class="price">30,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>3x Direct Yield Multiplier</li>
-          <li>Maximal Team Pass-Up Efficiency</li>
-          <li>Instant Web3 Wallet Liquidation</li>
+          <li>3x Yield Allocation</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('30,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Master Tier</h3>
         <div class="price">95,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>VIP Network Node Supremacy</li>
-          <li>Automated Cross-Level Routing</li>
-          <li>Non-Custodial Instant Payouts</li>
+          <li>VIP Network Status</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('95,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Grand Tier</h3>
         <div class="price">340,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Elite Governance & Staking Power</li>
-          <li>Uncapped Network Pass-Up Allocation</li>
-          <li>Direct Protocol Settlement</li>
+          <li>Elite Governance Power</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('340,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Supreme Tier</h3>
         <div class="price">600,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Institutional Pool Allocation</li>
-          <li>Maximum Yield Perpetuity</li>
-          <li>Complete Matrix Domination</li>
+          <li>Institutional Pool Tier</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('600,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Legend Tier</h3>
         <div class="price">900,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Apex Network Liquidity Position</li>
-          <li>Automated Pass-Up Hierarchy</li>
-          <li>Direct Contract Vault Access</li>
+          <li>Ultimate Growth Allocation</li>
+          <li>Direct Referral Yield</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn" onclick="selectPackage('900,000 USDT')">Activate Package</button>
       </article>
 
       <article class="package featured">
         <div class="pkg-badges">
-          <span class="badge-direct">40% Direct Incentive</span>
-          <span class="badge-upgrade">50% Protocol Upgrade</span>
-          <span class="badge-passup">40% Team Pass-Up Stream</span>
+          <span class="badge-direct">40% Direct Income</span>
+          <span class="badge-upgrade">50% Level Upgrade</span>
+          <span class="badge-passup">40% Team Pass-Up</span>
         </div>
         <h3>Crown Elite Tier</h3>
         <div class="price">1,200,000 USDT</div>
         <small>Smart Contract Ready</small>
         <ul>
-          <li>Master Smart Contract Node</li>
-          <li>Global Maximum Commission Cap</li>
-          <li>Instant Zero-Fee Payout Stream</li>
+          <li>Top Smart Contract Node</li>
+          <li>Max Global Commission</li>
+          <li>Instant Contract Payout</li>
         </ul>
         <button class="btn primary" onclick="selectPackage('1,200,000 USDT')">Activate Package</button>
       </article>
@@ -610,10 +570,10 @@ section{padding:65px 0;position:relative}
 <section id="referral">
   <div class="container">
     <div class="referral-box">
-      <h2>Invite. Connect. <span class="gradient">Expand.</span></h2>
-      <p>Propagate your referral URI to capture automated direct incentives directly to your Web3 wallet address.</p>
+      <h2>Invite. Connect. <span class="gradient">Grow.</span></h2>
+      <p>Share your referral link and earn direct commissions straight to your web3 wallet.</p>
       <div class="ref-row">
-        <input id="refLink" readonly value="Connect Wallet to Generate Referral URI">
+        <input id="refLink" readonly value="Connect Wallet to Generate Referral Link">
         <button class="btn primary" onclick="copyReferral()">Copy Link</button>
       </div>
     </div>
@@ -626,7 +586,7 @@ section{padding:65px 0;position:relative}
   <div class="container footer-row">
     <div>
       <div class="logo">direct<i></i><span>Pulse</span></div>
-      <p>© 2026 DirectPulse Protocol. Verified Decentralized Architecture.</p>
+      <p>© 2026 DirectPulse. Verified Smart Contract Ecosystem.</p>
     </div>
   </div>
 </footer>
@@ -634,20 +594,20 @@ section{padding:65px 0;position:relative}
 <div class="modal" id="dashboardModal">
   <div class="modal-box">
     <div class="modal-top">
-      <h3>Live <span class="gradient">Analytics</span></h3>
+      <h3>Live <span class="gradient">Dashboard</span></h3>
       <span class="close" onclick="closeModal('dashboardModal')">×</span>
     </div>
     <div class="dashboard-grid">
       <div class="dash-card">
-        <h4>Network Nodes</h4>
+        <h4>Total Team</h4>
         <div class="val">0</div>
       </div>
       <div class="dash-card">
-        <h4>24h Expansion</h4>
+        <h4>New Joining (24h)</h4>
         <div class="val">0</div>
       </div>
       <div class="dash-card">
-        <h4>Vault Balance</h4>
+        <h4>Live Balance</h4>
         <div class="val highlight">0.00 USDT</div>
       </div>
     </div>
@@ -657,12 +617,12 @@ section{padding:65px 0;position:relative}
 <div class="modal" id="walletModal">
   <div class="modal-box">
     <div class="modal-top">
-      <h3>Web3 Authentication</h3>
+      <h3>Wallet Connection</h3>
       <span class="close" onclick="closeModal('walletModal')">×</span>
     </div>
-    <p id="walletText">Querying Ethereum RPC Provider...</p>
+    <p id="walletText">Checking for a compatible Web3 wallet...</p>
     <div id="walletAddress" style="margin:16px 0;padding:12px;background:#05050b;border:1px solid var(--line);border-radius:10px;word-break:break-all;color:#cdb7ff;font-size:12px"></div>
-    <button class="btn primary" onclick="closeModal('walletModal')">Confirm Connection</button>
+    <button class="btn primary" onclick="closeModal('walletModal')">Continue</button>
   </div>
 </div>
 
@@ -688,7 +648,7 @@ async function connectWallet(){
   const address = $('walletAddress');
 
   if(!window.ethereum){
-    text.textContent = 'No Web3 Provider detected. Please access via MetaMask or Trust Wallet browser.';
+    text.textContent = 'No Web3 wallet detected. Please open in Metamask or Trust Wallet.';
     address.textContent = '';
     return;
   }
@@ -697,16 +657,16 @@ async function connectWallet(){
     const accounts = await window.ethereum.request({ method:'eth_requestAccounts' });
     if(accounts && accounts.length){
       const userAddress = accounts[0];
-      text.textContent = 'Cryptographic Handshake Successful!';
+      text.textContent = 'Wallet connected successfully!';
       address.textContent = userAddress;
-      
+
       const currentDomain = window.location.origin + window.location.pathname;
       $('refLink').value = currentDomain + "?ref=" + userAddress;
-      
-      toast('Wallet Connected & URI Generated!');
+
+      toast('Wallet Connected!');
     }
   }catch(err){
-    text.textContent = 'User rejected authentication request.';
+    text.textContent = 'Wallet connection was cancelled.';
     address.textContent = '';
   }
 }
@@ -715,16 +675,16 @@ async function copyReferral(){
   const value = $('refLink').value;
   try{
     await navigator.clipboard.writeText(value);
-    toast('Referral URI Copied to Clipboard!');
+    toast('Referral link copied!');
   }catch(e){
     $('refLink').select();
     document.execCommand('copy');
-    toast('Referral URI Copied to Clipboard!');
+    toast('Referral link copied!');
   }
 }
 
 function selectPackage(name){
-  toast(name + ' Node Selection Initiated.');
+  toast(name + ' package selected.');
 }
 
 document.querySelectorAll('.modal').forEach(modal=>{
