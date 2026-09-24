@@ -41,7 +41,6 @@ body{
   position: relative;
 }
 
-/* LIGHTWEIGHT 3D/2D GLOW BACKGROUND */
 body::before {
   content: "";
   position: fixed;
@@ -68,7 +67,6 @@ button{cursor:pointer}
 
 .container{width:min(1180px,92%);margin:auto}
 
-/* NAV STYLING */
 .nav{
   position:fixed;
   z-index:100;
@@ -183,7 +181,6 @@ section{padding:60px 0;position:relative}
 }
 .section-head p{color:var(--muted);line-height:1.7;margin-top:12px;font-size:15px}
 
-/* EARNING ROADMAP & EXPLANATION SECTION */
 .roadmap-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
@@ -208,7 +205,6 @@ section{padding:60px 0;position:relative}
   line-height:1.65;
 }
 
-/* PACKAGES LAYOUT */
 .packages{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
@@ -229,7 +225,6 @@ section{padding:60px 0;position:relative}
   background:rgba(139,92,246,.03);
 }
 
-/* EXACT MATCH CAPSULE BADGES (LIKE IN IMAGE) */
 .pkg-badges{
   display:flex;
   flex-wrap:wrap;
@@ -259,7 +254,6 @@ section{padding:60px 0;position:relative}
 .package li:before{content:"✓";color:var(--cyan);margin-right:8px}
 .package .btn{width:100%}
 
-/* REFERRAL & FOOTER */
 .referral-box{
   border:1px solid rgba(181,108,255,.2);
   border-radius:24px;
@@ -289,7 +283,6 @@ section{padding:60px 0;position:relative}
 .footer-row{display:flex;justify-content:space-between;gap:20px}
 .footer p{color:#727486;font-size:12px;margin-top:8px}
 
-/* MODAL STYLING */
 .dashboard-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
@@ -374,9 +367,9 @@ section{padding:60px 0;position:relative}
 
 <section class="hero" id="home">
   <div class="container">
-    <div class="pill"><b></b> NEXT-GEN AUTOMATED DECENTRALIZED PROTOCOL</div>
-    <h1>Empowering Global Earnings via <span class="gradient">Smart Contracts</span>.</h1>
-    <p id="about">A transparent, fully automated Web3 ecosystem featuring direct reward allocations, automated tier upgrades, and persistent yield streams.</p>
+    <div class="pill"><b></b> AUTOMATED DECENTRALIZED PROTOCOL</div>
+    <h1>Empowering Global Yield via <span class="gradient">Smart Contracts</span>.</h1>
+    <p id="about">A high-vocabulary, immutable Web3 architecture with structured membership allocations, direct sponsor distributions, and community pool dynamics.</p>
     <div class="actions">
       <button class="btn primary" onclick="openDashboard()">Open Dashboard</button>
       <button class="btn" onclick="connectWallet()">Connect Wallet</button>
@@ -384,49 +377,32 @@ section{padding:60px 0;position:relative}
   </div>
 </section>
 
-<!-- EXPLANATION / EARNING ARCHITECTURE SECTION -->
 <section id="architecture">
   <div class="container">
     <div class="section-head">
-      <h2>Earning <span class="gradient">Architecture</span></h2>
-      <p>Discover how the DirectPulse protocol distributes yield, manages network volume, and triggers automated package progressions.</p>
+      <h2>Protocol <span class="gradient">Jurisprudence</span></h2>
+      <p>Governed by immutable smart contract logic, enforcing strict ratio allocations across ecosystem tiers.</p>
     </div>
 
     <div class="roadmap-grid">
       <div class="roadmap-card">
-        <h3>1. Direct Sponsor Yield</h3>
-        <p>Generates a direct <b>33.2%</b> reward instantly paid out to qualified sponsors for expanding ecosystem reach and supporting active team growth.</p>
+        <h3>1. System Membership (56%)</h3>
+        <p>A mandatory <b>56%</b> fixed allocation ($25 per tier standard) set aside for systemic operations, protocol liquidity maintenance, and institutional ecosystem retention.</p>
       </div>
 
       <div class="roadmap-card">
-        <h3>2. Community Pool Lock</h3>
-        <p>Automatically reserves <b>10.8%</b> into a decentralized Community Lock Pool, generating persistent incentives for top performers and long-term ecosystem partners.</p>
+        <h3>2. Direct Sponsor Yield (75%)</h3>
+        <p><b>75%</b> of the net distributable yield is instantly remitted to the direct referrer wallet, acknowledging direct peer expansion.</p>
       </div>
 
       <div class="roadmap-card">
-        <h3>3. Smart Package Thresholds</h3>
-        <p>The Smart Contract constantly tracks each user's total accrued revenue history. Once historical earnings cross specific thresholds, an automated trigger sequence is activated.</p>
-      </div>
-
-      <div class="roadmap-card">
-        <h3>4. Automated Tier Progression</h3>
-        <p>Upon reaching a threshold, the Smart Contract automatically executes tier upgrades seamlessly across all levels without manual intervention.</p>
-      </div>
-
-      <div class="roadmap-card">
-        <h3>5. Continuous Earnings Locking</h3>
-        <p>Persistent matrix limits ensure cycling rewards, continuous reinvestment triggers, and uninterrupted commission streams across every active level.</p>
-      </div>
-
-      <div class="roadmap-card">
-        <h3>6. Zero-Loss Security</h3>
-        <p>Users who keep their tier thresholds satisfied enjoy uninterrupted payout streams. Unqualified income is safely recycled through the smart contract back to active participants.</p>
+        <h3>3. Community Pool Lock (25%)</h3>
+        <p>The remaining <b>25%</b> of net distributable volume is routed directly to the decentralized Community Lock Pool for dynamic multi-level disbursement.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PACKAGES SECTION -->
 <section id="packages">
   <div class="container">
     <div class="section-head">
@@ -436,206 +412,135 @@ section{padding:60px 0;position:relative}
 
     <div class="packages">
 
-      <!-- PACKAGE 1: 25 USDT -->
+      <!-- PACKAGE 1 -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
+            <span class="pkg-badge">56% Membership</span>
+            <span class="pkg-badge">75% Direct</span>
+            <span class="pkg-badge">25% Community</span>
           </div>
           <h3>Pulse Entry</h3>
           <div class="price">25 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
-            <li>Basic Ecosystem Access</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
+            <li>Ecosystem Access</li>
+            <li>Direct Sponsor Allocation</li>
+            <li>Instant On-Chain Settlement</li>
           </ul>
         </div>
         <button class="btn" onclick="selectPackage('25 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 2: 100 USDT -->
+      <!-- PACKAGE 2 -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
+            <span class="pkg-badge">56% Membership</span>
+            <span class="pkg-badge">75% Direct</span>
+            <span class="pkg-badge">25% Community</span>
           </div>
           <h3>Pulse Basic</h3>
           <div class="price">100 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
-            <li>Enhanced Matrix Node</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
+            <li>Enhanced Matrix Slot</li>
+            <li>Direct Sponsor Allocation</li>
+            <li>Instant On-Chain Settlement</li>
           </ul>
         </div>
         <button class="btn" onclick="selectPackage('100 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 3: 400 USDT -->
+      <!-- PACKAGE 3 -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
+            <span class="pkg-badge">56% Membership</span>
+            <span class="pkg-badge">75% Direct</span>
+            <span class="pkg-badge">25% Community</span>
           </div>
           <h3>Pulse Pro</h3>
           <div class="price">400 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
-            <li>Expanded Network Growth</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
+            <li>Expanded Tier Growth</li>
+            <li>Direct Sponsor Allocation</li>
+            <li>Instant On-Chain Settlement</li>
           </ul>
         </div>
         <button class="btn" onclick="selectPackage('400 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 4: 2,500 USDT -->
+      <!-- PACKAGE 4 -->
       <article class="package featured">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
+            <span class="pkg-badge">56% Membership</span>
+            <span class="pkg-badge">75% Direct</span>
+            <span class="pkg-badge">25% Community</span>
           </div>
           <h3>Pulse Master</h3>
           <div class="price">2,500 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
-            <li>Full Matrix Access</li>
-            <li>Priority Yield Distribution</li>
-            <li>Instant Contract Distribution</li>
+            <li>Full Matrix Privileges</li>
+            <li>Priority Yield Route</li>
+            <li>Instant On-Chain Settlement</li>
           </ul>
         </div>
         <button class="btn primary" onclick="selectPackage('2,500 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 5: 7,500 USDT -->
+      <!-- PACKAGE 5 -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
+            <span class="pkg-badge">56% Membership</span>
+            <span class="pkg-badge">75% Direct</span>
+            <span class="pkg-badge">25% Community</span>
           </div>
           <h3>Pulse Premier</h3>
           <div class="price">7,500 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
-            <li>Full Platform Access</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
+            <li>Full Institutional Access</li>
+            <li>Direct Sponsor Allocation</li>
+            <li>Instant On-Chain Settlement</li>
           </ul>
         </div>
         <button class="btn" onclick="selectPackage('7,500 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 6: 25,000 USDT -->
+      <!-- PACKAGE 6 -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
+            <span class="pkg-badge">56% Membership</span>
+            <span class="pkg-badge">75% Direct</span>
+            <span class="pkg-badge">25% Community</span>
           </div>
           <h3>Pulse Elite</h3>
           <div class="price">25,000 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Priority Node Slot</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
+            <li>Direct Sponsor Allocation</li>
+            <li>Instant On-Chain Settlement</li>
           </ul>
         </div>
         <button class="btn" onclick="selectPackage('25,000 USDT')">Activate Package</button>
-      </article>
-
-      <!-- PACKAGE 7: 100,000 USDT -->
-      <article class="package">
-        <div>
-          <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
-          </div>
-          <h3>Pulse Apex</h3>
-          <div class="price">100,000 USDT</div>
-          <small>Smart Contract Ready</small>
-          <ul>
-            <li>High Yield Allocation</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
-          </ul>
-        </div>
-        <button class="btn" onclick="selectPackage('100,000 USDT')">Activate Package</button>
-      </article>
-
-      <!-- PACKAGE 8: 400,000 USDT -->
-      <article class="package">
-        <div>
-          <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
-          </div>
-          <h3>Pulse Prime</h3>
-          <div class="price">400,000 USDT</div>
-          <small>Smart Contract Ready</small>
-          <ul>
-            <li>VIP Network Status</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
-          </ul>
-        </div>
-        <button class="btn" onclick="selectPackage('400,000 USDT')">Activate Package</button>
-      </article>
-
-      <!-- PACKAGE 9: 1,200,000 USDT -->
-      <article class="package">
-        <div>
-          <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
-          </div>
-          <h3>Pulse Legend</h3>
-          <div class="price">1,200,000 USDT</div>
-          <small>Smart Contract Ready</small>
-          <ul>
-            <li>Elite Governance Power</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
-          </ul>
-        </div>
-        <button class="btn" onclick="selectPackage('1,200,000 USDT')">Activate Package</button>
-      </article>
-
-      <!-- PACKAGE 10: 3,600,000 USDT -->
-      <article class="package featured">
-        <div>
-          <div class="pkg-badges">
-            <span class="pkg-badge">33.2% Direct</span>
-            <span class="pkg-badge">10.8% Pool</span>
-          </div>
-          <h3>Pulse Crown Supreme</h3>
-          <div class="price">3,600,000 USDT</div>
-          <small>Smart Contract Ready</small>
-          <ul>
-            <li>Top Smart Contract Node</li>
-            <li>Max Global Commission</li>
-            <li>Instant Contract Distribution</li>
-          </ul>
-        </div>
-        <button class="btn primary" onclick="selectPackage('3,600,000 USDT')">Activate Package</button>
       </article>
 
     </div>
   </div>
 </section>
 
-<!-- REFERRAL SECTION -->
 <section id="referral">
   <div class="container">
     <div class="referral-box">
       <h2>Invite. Connect. <span class="gradient">Earn.</span></h2>
-      <p>Share your unique referral link to unlock instant direct yields directly into your wallet.</p>
+      <p>Share your unique referral link to unlock instant distributions directly into your web3 wallet.</p>
       <div class="ref-row">
         <input id="refLink" readonly value="Connect Wallet to Generate Referral Link">
         <button class="btn primary" onclick="copyReferral()">Copy Link</button>
@@ -650,12 +555,11 @@ section{padding:60px 0;position:relative}
   <div class="container footer-row">
     <div>
       <div class="logo">direct<i></i><span>Pulse</span></div>
-      <p>© 2026 DirectPulse. Verified Smart Contract Ecosystem.</p>
+      <p>© 2026 DirectPulse. Immutable Decentralized Architecture.</p>
     </div>
   </div>
 </footer>
 
-<!-- DASHBOARD MODAL WITH LIVE & HISTORY BALANCE -->
 <div class="modal" id="dashboardModal">
   <div class="modal-box">
     <div class="modal-top">
@@ -764,14 +668,6 @@ document.querySelectorAll('.modal').forEach(modal=>{
   modal.addEventListener('click',(e)=>{
     if(e.target === modal) modal.classList.remove('show');
   });
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const referrer = urlParams.get('ref');
-  if(referrer){
-    window.userReferrer = referrer;
-  }
 });
 </script>
 
