@@ -241,9 +241,9 @@ section{padding:60px 0;position:relative}
   border-radius:8px;
   font-size:11px;
   font-weight:600;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);
-  color:#d4d5e2;
+  background:rgba(139,92,246,.12);
+  border:1px solid rgba(181,108,255,.3);
+  color:var(--cyan);
   letter-spacing:0.2px;
 }
 
@@ -394,33 +394,33 @@ section{padding:60px 0;position:relative}
 
     <div class="roadmap-grid">
       <div class="roadmap-card">
-        <h3>1. Direct Protocol Royalty</h3>
-        <p>Every active membership and subsequent tier purchase instantly allocates a guaranteed <b>50% Direct Royalty</b> to the Ecosystem Protocol (Owner). This ensures absolute stability and continuous network operational efficiency.</p>
+        <h3>1. Direct Sponsor Yield</h3>
+        <p>Generates a direct <b>33.2%</b> reward instantly paid out to qualified sponsors for expanding ecosystem reach and supporting active team growth.</p>
       </div>
 
       <div class="roadmap-card">
-        <h3>2. Upline Pass-Up Yield</h3>
-        <p>The remaining balance triggers a dynamic <b>40% Auto-Deduction Pass-Up</b> algorithm. Earnings automatically stream upward to qualified direct uplines, creating an endless residual income tree across all levels.</p>
+        <h3>2. Community Pool Lock</h3>
+        <p>Automatically reserves <b>10.8%</b> into a decentralized Community Lock Pool, generating persistent incentives for top performers and long-term ecosystem partners.</p>
       </div>
 
       <div class="roadmap-card">
         <h3>3. Smart Package Thresholds</h3>
-        <p>The Smart Contract constantly tracks each user's total accrued revenue history. Once historical earnings cross specific thresholds (e.g., <b>$490 USDT</b> or <b>$4,090 USDT</b>), an automated trigger sequence is activated.</p>
+        <p>The Smart Contract constantly tracks each user's total accrued revenue history. Once historical earnings cross specific thresholds, an automated trigger sequence is activated.</p>
       </div>
 
       <div class="roadmap-card">
         <h3>4. Automated Tier Progression</h3>
-        <p>Upon reaching a threshold, the Smart Contract automatically executes a tier upgrade (e.g., 100 USDT or 500 USDT Package). Upgrade fees are split seamlessly: <b>50% to Protocol, 50% to the Direct Upline</b>.</p>
+        <p>Upon reaching a threshold, the Smart Contract automatically executes tier upgrades seamlessly across all levels without manual intervention.</p>
       </div>
 
       <div class="roadmap-card">
         <h3>5. Continuous Earnings Locking</h3>
-        <p>If a user withdraws funds before upgrading, non-upgraded earnings are automatically redirected (50% Protocol / 50% Upline) until the tier balance limit is met, unlocking permanent ongoing commission streams.</p>
+        <p>Persistent matrix limits ensure cycling rewards, continuous reinvestment triggers, and uninterrupted commission streams across every active level.</p>
       </div>
 
       <div class="roadmap-card">
         <h3>6. Zero-Loss Security</h3>
-        <p>Users who keep their tier thresholds satisfied enjoy uninterrupted payout streams. Unqualified income is safely recycled through the smart contract back to active upline participants.</p>
+        <p>Users who keep their tier thresholds satisfied enjoy uninterrupted payout streams. Unqualified income is safely recycled through the smart contract back to active participants.</p>
       </div>
     </div>
   </div>
@@ -436,16 +436,15 @@ section{padding:60px 0;position:relative}
 
     <div class="packages">
 
-      <!-- PACKAGE 1: 22 USDT -->
+      <!-- PACKAGE 1: 25 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Pulse Entry</h3>
-          <div class="price">22 USDT</div>
+          <h3>Entry Tier</h3>
+          <div class="price">25 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Basic Ecosystem Access</li>
@@ -453,18 +452,17 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn" onclick="selectPackage('22 USDT')">Activate Package</button>
+        <button class="btn" onclick="selectPackage('25 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 2 -->
+      <!-- PACKAGE 2: 100 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Pulse Basic</h3>
+          <h3>Level 1 Tier</h3>
           <div class="price">100 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
@@ -476,16 +474,15 @@ section{padding:60px 0;position:relative}
         <button class="btn" onclick="selectPackage('100 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 3 -->
+      <!-- PACKAGE 3: 400 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Pulse Advance</h3>
-          <div class="price">500 USDT</div>
+          <h3>Level 2 Tier</h3>
+          <div class="price">400 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Expanded Network Growth</li>
@@ -493,19 +490,18 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn" onclick="selectPackage('500 USDT')">Activate Package</button>
+        <button class="btn" onclick="selectPackage('400 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 4: 1,000 USDT -->
+      <!-- PACKAGE 4: 2,500 USDT -->
       <article class="package featured">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Pulse Pro</h3>
-          <div class="price">1,000 USDT</div>
+          <h3>Level 3 Tier</h3>
+          <div class="price">2,500 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Full Matrix Access</li>
@@ -513,19 +509,18 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn primary" onclick="selectPackage('1,000 USDT')">Activate Package</button>
+        <button class="btn primary" onclick="selectPackage('2,500 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 5 -->
+      <!-- PACKAGE 5: 7,500 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Starter Tier</h3>
-          <div class="price">5,000 USDT</div>
+          <h3>Level 4 Tier</h3>
+          <div class="price">7,500 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Full Platform Access</li>
@@ -533,19 +528,18 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn" onclick="selectPackage('5,000 USDT')">Activate Package</button>
+        <button class="btn" onclick="selectPackage('7,500 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 6 -->
+      <!-- PACKAGE 6: 25,000 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Advancer Tier</h3>
-          <div class="price">15,000 USDT</div>
+          <h3>Level 5 Tier</h3>
+          <div class="price">25,000 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Priority Node Slot</li>
@@ -553,39 +547,37 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn" onclick="selectPackage('15,000 USDT')">Activate Package</button>
+        <button class="btn" onclick="selectPackage('25,000 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 7 -->
+      <!-- PACKAGE 7: 100,000 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Pro Tier</h3>
-          <div class="price">30,000 USDT</div>
+          <h3>Level 6 Tier</h3>
+          <div class="price">100,000 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
-            <li>3x Yield Allocation</li>
+            <li>High Yield Allocation</li>
             <li>Direct Referral Yield</li>
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn" onclick="selectPackage('30,000 USDT')">Activate Package</button>
+        <button class="btn" onclick="selectPackage('100,000 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 8 -->
+      <!-- PACKAGE 8: 400,000 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Master Tier</h3>
-          <div class="price">95,000 USDT</div>
+          <h3>Level 7 Tier</h3>
+          <div class="price">400,000 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>VIP Network Status</li>
@@ -593,19 +585,18 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn" onclick="selectPackage('95,000 USDT')">Activate Package</button>
+        <button class="btn" onclick="selectPackage('400,000 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 9 -->
+      <!-- PACKAGE 9: 1,200,000 USDT -->
       <article class="package">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Grand Tier</h3>
-          <div class="price">340,000 USDT</div>
+          <h3>Level 8 Tier</h3>
+          <div class="price">1,200,000 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Elite Governance Power</li>
@@ -613,59 +604,18 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn" onclick="selectPackage('340,000 USDT')">Activate Package</button>
+        <button class="btn" onclick="selectPackage('1,200,000 USDT')">Activate Package</button>
       </article>
 
-      <!-- PACKAGE 10 -->
-      <article class="package">
-        <div>
-          <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
-          </div>
-          <h3>Supreme Tier</h3>
-          <div class="price">600,000 USDT</div>
-          <small>Smart Contract Ready</small>
-          <ul>
-            <li>Institutional Pool Tier</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
-          </ul>
-        </div>
-        <button class="btn" onclick="selectPackage('600,000 USDT')">Activate Package</button>
-      </article>
-
-      <!-- PACKAGE 11 -->
-      <article class="package">
-        <div>
-          <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
-          </div>
-          <h3>Legend Tier</h3>
-          <div class="price">900,000 USDT</div>
-          <small>Smart Contract Ready</small>
-          <ul>
-            <li>Ultimate Growth Allocation</li>
-            <li>Direct Referral Yield</li>
-            <li>Instant Contract Distribution</li>
-          </ul>
-        </div>
-        <button class="btn" onclick="selectPackage('900,000 USDT')">Activate Package</button>
-      </article>
-
-      <!-- PACKAGE 12 -->
+      <!-- PACKAGE 10: 3,600,000 USDT -->
       <article class="package featured">
         <div>
           <div class="pkg-badges">
-            <span class="pkg-badge">40% Direct</span>
-            <span class="pkg-badge">50% Upgrade</span>
-            <span class="pkg-badge">40% Pass-Up</span>
+            <span class="pkg-badge">33.2% Direct Sponsor</span>
+            <span class="pkg-badge">10.8% Community Pool</span>
           </div>
-          <h3>Crown Elite Tier</h3>
-          <div class="price">1,200,000 USDT</div>
+          <h3>Crown Supreme Tier</h3>
+          <div class="price">3,600,000 USDT</div>
           <small>Smart Contract Ready</small>
           <ul>
             <li>Top Smart Contract Node</li>
@@ -673,7 +623,7 @@ section{padding:60px 0;position:relative}
             <li>Instant Contract Distribution</li>
           </ul>
         </div>
-        <button class="btn primary" onclick="selectPackage('1,200,000 USDT')">Activate Package</button>
+        <button class="btn primary" onclick="selectPackage('3,600,000 USDT')">Activate Package</button>
       </article>
 
     </div>
@@ -685,7 +635,7 @@ section{padding:60px 0;position:relative}
   <div class="container">
     <div class="referral-box">
       <h2>Invite. Connect. <span class="gradient">Earn.</span></h2>
-      <p>Share your unique referral link to unlock instant direct and pass-up yields directly into your wallet.</p>
+      <p>Share your unique referral link to unlock instant direct yields directly into your wallet.</p>
       <div class="ref-row">
         <input id="refLink" readonly value="Connect Wallet to Generate Referral Link">
         <button class="btn primary" onclick="copyReferral()">Copy Link</button>
